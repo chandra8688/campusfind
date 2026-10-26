@@ -17,6 +17,7 @@ SARVAM_MODEL_NAME = "sarvam-105b"
 
 def get_sarvam_api_key() -> str:
     """Retrieve Sarvam API Key from environment variable or session override."""
+    load_dotenv(override=False)
     return os.getenv("SARVAM_API_KEY", "").strip()
 
 # Campus Locations common on Indian College Campuses
