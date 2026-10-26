@@ -1,0 +1,240 @@
+"""
+Sample campus Lost and Found reports demonstrating multilingual campus scenarios.
+Includes Hindi, Hinglish, Tamil/English, and English reports with realistic matching pairs.
+"""
+
+from typing import List, Dict, Any
+
+SAMPLE_REPORTS: List[Dict[str, Any]] = [
+    # Pair 1: Milton Thermosteel Water Bottle (Hinglish Lost <-> English Found)
+    {
+        "id": "RPT-2026-001",
+        "type": "lost",
+        "title": "Lost Milton Blue Thermosteel Bottle",
+        "raw_description": "Mera blue color ka Milton thermos water bottle Central Library ke 2nd floor reading hall me chhut gaya. Uspe ek Batman ka sticker laga hai aur silver steel cap hai.",
+        "reported_location": "Central Library (1st/2nd Floor Reading Hall)",
+        "date": "2026-10-25",
+        "contact": {
+            "name": "Arjun Sharma",
+            "email": "a***@campus.edu",
+            "phone": "+91 98*** 12345",
+            "is_dummy": True
+        },
+        "attributes": {
+            "item_type": "Water Bottle",
+            "color": "Blue",
+            "brand": "Milton",
+            "distinctive_features": "Batman sticker, silver steel cap",
+            "location": "Central Library 2nd Floor",
+            "detected_language": "Hinglish (Hindi in Latin script)"
+        },
+        "extraction_metadata": {
+            "model_used": "sarvam-105b (Pre-extracted Sample)",
+            "is_live_ai": False,
+            "timestamp": "2026-10-25T14:30:00"
+        },
+        "status": "open"
+    },
+    {
+        "id": "RPT-2026-002",
+        "type": "found",
+        "title": "Found Navy Blue Milton Water Flask",
+        "raw_description": "Found a navy blue Milton water bottle on the second floor of the Central Library near study cubicle 14. Has a superhero sticker on the side and steel cap.",
+        "reported_location": "Central Library (1st/2nd Floor Reading Hall)",
+        "date": "2026-10-25",
+        "contact": {
+            "name": "Kavita Nair (Library Attendant)",
+            "email": "k***@campus.edu",
+            "phone": "+91 97*** 67890",
+            "is_dummy": True
+        },
+        "attributes": {
+            "item_type": "Water Bottle",
+            "color": "Navy Blue",
+            "brand": "Milton",
+            "distinctive_features": "Superhero sticker, steel cap",
+            "location": "Central Library 2nd Floor",
+            "detected_language": "English"
+        },
+        "extraction_metadata": {
+            "model_used": "sarvam-105b (Pre-extracted Sample)",
+            "is_live_ai": False,
+            "timestamp": "2026-10-25T17:15:00"
+        },
+        "status": "open"
+    },
+
+    # Pair 2: Casio Scientific Calculator (Pure Devanagari Hindi Lost <-> Hinglish Found)
+    {
+        "id": "RPT-2026-003",
+        "type": "lost",
+        "title": "खोया: Casio fx-991EX कैलकुलेटर",
+        "raw_description": "मैकेनिकल ब्लॉक रूम 102 में मेरा ब्लैक केसियो एफएक्स-991ईएक्स साइंटिफिक कैलकुलेटर छूट गया। पीछे रोल नंबर 23ME042 का छोटा सा स्टिकर है।",
+        "reported_location": "Mechanical & Civil Engineering Block",
+        "date": "2026-10-24",
+        "contact": {
+            "name": "Rohit Verma",
+            "email": "r***@campus.edu",
+            "phone": "+91 99*** 34567",
+            "is_dummy": True
+        },
+        "attributes": {
+            "item_type": "Scientific Calculator",
+            "color": "Black",
+            "brand": "Casio",
+            "distinctive_features": "Roll number 23ME042 sticker, fx-991EX model",
+            "location": "Mechanical Block Room 102",
+            "detected_language": "Hindi (Devanagari)"
+        },
+        "extraction_metadata": {
+            "model_used": "sarvam-105b (Pre-extracted Sample)",
+            "is_live_ai": False,
+            "timestamp": "2026-10-24T18:00:00"
+        },
+        "status": "open"
+    },
+    {
+        "id": "RPT-2026-004",
+        "type": "found",
+        "title": "Found Black Casio Scientific Calculator",
+        "raw_description": "Mechanical Engineering block 1st floor tutorial hall ke pass black Casio scientific calc mila. Back cover par student roll number sticker laga hua hai.",
+        "reported_location": "Mechanical & Civil Engineering Block",
+        "date": "2026-10-24",
+        "contact": {
+            "name": "Lab Assistant Suresh",
+            "email": "s***@campus.edu",
+            "phone": "+91 91*** 98765",
+            "is_dummy": True
+        },
+        "attributes": {
+            "item_type": "Scientific Calculator",
+            "color": "Black",
+            "brand": "Casio",
+            "distinctive_features": "Roll number sticker on back",
+            "location": "Mechanical Block",
+            "detected_language": "Hinglish (Hindi in Latin script)"
+        },
+        "extraction_metadata": {
+            "model_used": "sarvam-105b (Pre-extracted Sample)",
+            "is_live_ai": False,
+            "timestamp": "2026-10-24T19:30:00"
+        },
+        "status": "open"
+    },
+
+    # Pair 3: Student Identity Card (Tamil/English Lost <-> English Found)
+    {
+        "id": "RPT-2026-005",
+        "type": "lost",
+        "title": "Lost Student Identity Card with Blue Lanyard",
+        "raw_description": "Ennudaya Student ID card campus cafeteria billing counter kitta drop pannitten. Name on card is Priya Raman, CSE Dept with dark blue neck strap.",
+        "reported_location": "Campus Cafeteria & Food Court",
+        "date": "2026-10-26",
+        "contact": {
+            "name": "Priya Raman",
+            "email": "p***@campus.edu",
+            "phone": "+91 94*** 56789",
+            "is_dummy": True
+        },
+        "attributes": {
+            "item_type": "ID Card",
+            "color": "Blue",
+            "brand": "Campus University",
+            "distinctive_features": "Blue lanyard, name Priya Raman CSE Dept",
+            "location": "Campus Cafeteria",
+            "detected_language": "Tamil / English"
+        },
+        "extraction_metadata": {
+            "model_used": "sarvam-105b (Pre-extracted Sample)",
+            "is_live_ai": False,
+            "timestamp": "2026-10-26T11:00:00"
+        },
+        "status": "open"
+    },
+    {
+        "id": "RPT-2026-006",
+        "type": "found",
+        "title": "Found Student Identity Card near Food Court",
+        "raw_description": "Found a student identity card near the cafeteria cash counter. Blue neck strap, belongs to a Computer Science student. Deposited at student helpdesk.",
+        "reported_location": "Campus Cafeteria & Food Court",
+        "date": "2026-10-26",
+        "contact": {
+            "name": "Cafeteria Help Desk",
+            "email": "helpdesk@campus.edu",
+            "phone": "+91 90*** 00000",
+            "is_dummy": True
+        },
+        "attributes": {
+            "item_type": "ID Card",
+            "color": "Blue",
+            "brand": "Campus University",
+            "distinctive_features": "Blue neck strap, Computer Science student",
+            "location": "Cafeteria Cash Counter",
+            "detected_language": "English"
+        },
+        "extraction_metadata": {
+            "model_used": "sarvam-105b (Pre-extracted Sample)",
+            "is_live_ai": False,
+            "timestamp": "2026-10-26T12:30:00"
+        },
+        "status": "open"
+    },
+
+    # Single Items for variety / edge case testing
+    {
+        "id": "RPT-2026-007",
+        "type": "lost",
+        "title": "Lost Wildcraft Grey Laptop Backpack",
+        "raw_description": "Grey Wildcraft laptop backpack left at the Sports Complex badminton court bleachers. Has a football keychain on the front zipper and some notes inside.",
+        "reported_location": "Sports Complex / Badminton Court / Gym",
+        "date": "2026-10-23",
+        "contact": {
+            "name": "Devansh Singhania",
+            "email": "d***@campus.edu",
+            "phone": "+91 93*** 11223",
+            "is_dummy": True
+        },
+        "attributes": {
+            "item_type": "Backpack",
+            "color": "Grey",
+            "brand": "Wildcraft",
+            "distinctive_features": "Football keychain on front zipper",
+            "location": "Sports Complex Badminton Court",
+            "detected_language": "English"
+        },
+        "extraction_metadata": {
+            "model_used": "sarvam-105b (Pre-extracted Sample)",
+            "is_live_ai": False,
+            "timestamp": "2026-10-23T20:10:00"
+        },
+        "status": "open"
+    },
+    {
+        "id": "RPT-2026-008",
+        "type": "found",
+        "title": "Found Noise ColorFit Smartwatch",
+        "raw_description": "Gym locker room me bench ke neeche ek black color ka Noise ColorFit smartwatch mila hai with magnetic charger cable.",
+        "reported_location": "Sports Complex / Badminton Court / Gym",
+        "date": "2026-10-26",
+        "contact": {
+            "name": "Gym Instructor Manoj",
+            "email": "m***@campus.edu",
+            "phone": "+91 98*** 77889",
+            "is_dummy": True
+        },
+        "attributes": {
+            "item_type": "Smartwatch",
+            "color": "Black",
+            "brand": "Noise",
+            "distinctive_features": "Magnetic charger cable included",
+            "location": "Gym Locker Room",
+            "detected_language": "Hinglish (Hindi in Latin script)"
+        },
+        "extraction_metadata": {
+            "model_used": "sarvam-105b (Pre-extracted Sample)",
+            "is_live_ai": False,
+            "timestamp": "2026-10-26T09:15:00"
+        },
+        "status": "open"
+    }
+]
